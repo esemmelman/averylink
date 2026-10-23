@@ -3,11 +3,13 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="version" content="1.1.0">
   <meta name="description" content="Automatically open Avery Menu and Avery Hebrew.">
   <title>Opening Avery…</title>
   <script>
     const menuUrl = 'https://esemmelman.github.io/averymenu/';
     const hebrewUrl = 'https://esemmelman.github.io/avery-hebrew/';
+    // Keep Hebrew in the original (first) tab and open Menu in the next tab.
     try {
       const menu = window.open(menuUrl, '_blank');
       if (menu) {
@@ -27,4 +29,5 @@
   </noscript>
 </body>
 </html>
+
 
