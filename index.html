@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Open Avery Menu and Avery Hebrew together.">
+  <title>Avery Links</title>
+  <style>
+    :root { font-family: system-ui, sans-serif; color: #173731; background: #f3f6ee; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100svh; display: grid; place-items: center; padding: 24px; }
+    main { width: 100%; max-width: 480px; padding: 40px 28px; background: white; border-radius: 24px; box-shadow: 0 16px 60px #17373112; text-align: center; }
+    .label { font-size: .8rem; letter-spacing: .16em; text-transform: uppercase; }
+    h1 { font-size: 2.4rem; margin: 16px 0; }
+    p { line-height: 1.6; color: #52645e; }
+    button { width: 100%; border: 0; border-radius: 12px; padding: 18px; margin: 16px 0; background: #245c48; color: white; font: inherit; font-weight: 650; cursor: pointer; }
+    button:hover { background: #194332; }
+    :focus-visible { outline: 3px solid #b27d22; outline-offset: 4px; }
+    nav { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-top: 16px; }
+    a { color: #245c48; text-underline-offset: 4px; }
+    #status { font-size: .9rem; }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="label">Avery • Together in one place</div>
+    <h1>Two links. One click.</h1>
+    <p>Open Avery Menu and Avery Hebrew in two tabs in this browser.</p>
+    <button id="open-both" type="button">Open both ↗</button>
+    <p id="status" role="status">Menu opens in this tab. Hebrew opens in a new tab.</p>
+    <nav aria-label="Individual links">
+      <a href="https://esemmelman.github.io/averymenu/">Avery Menu</a>
+      <a href="https://esemmelman.github.io/avery-hebrew/">Avery Hebrew</a>
+    </nav>
+    <noscript><p>Enable JavaScript to open both together, or use the individual links above.</p></noscript>
+  </main>
+  <script>
+    document.getElementById('open-both').addEventListener('click', function () {
+      const hebrew = window.open('https://esemmelman.github.io/avery-hebrew/', '_blank');
+      if (!hebrew) {
+        document.getElementById('status').textContent = 'Your browser blocked the new tab. Allow pop-ups for this page and try again, or use the individual links below.';
+        return;
+      }
+      hebrew.opener = null;
+      window.location.assign('https://esemmelman.github.io/averymenu/');
+    });
+  </script>
+</body>
+</html>
