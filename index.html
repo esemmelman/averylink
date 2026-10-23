@@ -9,10 +9,13 @@
     const menuUrl = 'https://esemmelman.github.io/averymenu/';
     const hebrewUrl = 'https://esemmelman.github.io/avery-hebrew/';
     try {
-      const hebrew = window.open(hebrewUrl, '_blank');
-      if (hebrew) hebrew.opener = null;
+      const menu = window.open(menuUrl, '_blank');
+      if (menu) {
+        menu.focus();
+        menu.opener = null;
+      }
     } finally {
-      window.location.replace(menuUrl);
+      window.location.replace(hebrewUrl);
     }
   </script>
 </head>
@@ -24,3 +27,4 @@
   </noscript>
 </body>
 </html>
+
