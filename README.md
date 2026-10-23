@@ -1,7 +1,9 @@
 # Avery Links
 
-Public launcher: https://esemmelman.github.io/averylink/
+Public link: https://esemmelman.github.io/averylink/
 
-Click **Open both** to open Avery Hebrew in a new tab and Avery Menu in the current tab. Browsers require this click to allow a new tab. If pop-ups are blocked, the page stays visible with instructions and individual links.
+Immediately attempts to open Avery Hebrew in a new tab and replaces the current page with Avery Menu. There is no launcher screen or extra button.
 
-Static HTML, CSS, and JavaScript; no dependencies. Published with GitHub Pages from the root of `main`.
+Browsers may block the automatic Hebrew tab. Allow pop-ups for https://esemmelman.github.io to enable both pages to open. A website cannot override browser pop-up settings.
+
+Static HTML and JavaScript; published with GitHub Pages from the root of main.
